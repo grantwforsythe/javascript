@@ -7,7 +7,23 @@ let logEntries = [];
  * @returns parse user input as an int
  */
 function getUserInput() {
-    return parseInt(userInput.value)
+    return userInput.value.length === 0 ? 0 : parseInt(userInput.value);
+}
+
+function writeToLog(
+    operationalIdentifier,
+    initialResult,
+    operationNumber,
+    newResult
+) {
+    const logEntry = {
+        operation: operationalIdentifier,
+        initialResult: initialResult,
+        number: operationNumber,
+        result: newResult
+    };
+    logEntries.push(logEntry);
+    console.log(logEntries[logEntries.length - 1]);
 }
 
 /**
@@ -19,8 +35,6 @@ function getUserInput() {
 function writeOutput(operator, initialResult, calcNumber) {
     const description = `${currentResult} ${operator} ${calcNumber}`;
     outputResult(currentResult, description);
-    logEntries.push(calcNumber);
-    console.log(logEntries);
 }
 
 function add() {
@@ -28,6 +42,7 @@ function add() {
     const initialResult = currentResult;
     currentResult += calcNumber;
     writeOutput('+', initialResult, calcNumber);
+    writeToLog('ADD', initialResult, calcNumber, currentResult);
 }
 
 function subtrack() {
@@ -35,6 +50,7 @@ function subtrack() {
     const initialResult = currentResult;
     currentResult -= calcNumber;
     writeOutput('-', initialResult, calcNumber);
+    writeToLog('SUBTRACK', initialResult, calcNumber, currentResult);
 }
 
 function multiply() {
@@ -42,6 +58,7 @@ function multiply() {
     const initialResult = currentResult;
     currentResult *= calcNumber;
     writeOutput('*', initialResult, calcNumber);
+    writeToLog('MULTIPLY', initialResult, calcNumber, currentResult);
 }
 
 function divide() {
@@ -49,6 +66,7 @@ function divide() {
     const initialResult = currentResult;
     currentResult /= calcNumber;
     writeOutput('/', initialResult, calcNumber);
+    writeToLog('DIVIDE', initialResult, calcNumber, currentResult);
 }
 
 

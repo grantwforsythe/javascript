@@ -1,5 +1,6 @@
 const defaultResult = 0;
 let currentResult = defaultResult
+let logEntries = [];
 
 /**
  * Get input from input field.
@@ -18,6 +19,8 @@ function getUserInput() {
 function writeOutput(operator, initialResult, calcNumber) {
     const description = `${currentResult} ${operator} ${calcNumber}`;
     outputResult(currentResult, description);
+    logEntries.push(calcNumber);
+    console.log(logEntries);
 }
 
 function add() {

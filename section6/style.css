@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+}
+body {
+    background-color: blueviolet;
+    margin: 0;
+}
+#start-game-btn {
+    border-radius: 15%;
+    border: 3px black solid;
+    padding: 15px 5px;
+    color: white;
+    font-size: 50px;
+    background-color: rgb(106, 90, 205);
+}
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border: 3px black solid;
+}
+.flex-item {
+    max-width: 50%;
+}

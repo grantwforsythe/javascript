@@ -45,6 +45,6 @@ const parseFile = (fileName, request) => {
     }
 };
 
-document.querySelector('#button-text').addEventListener('click', makeAJAXRequest.bind(null, 'test.txt'));
+document.querySelector('#button-text').addEventListener('click', makeAJAXRequest.bind(null, 'data/test.txt'));
 
-document.querySelector('#button-xml').addEventListener('click', makeAJAXRequest.bind(null, 'test.xml'));
+document.querySelector('#button-xml').addEventListener('click', makeAJAXRequest.bind(null, 'data/test.xml'));

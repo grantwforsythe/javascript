@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+}
+#span-button {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.container {
+    margin-top: 25px;
+}
